@@ -1,9 +1,9 @@
 .movie {
+    width: 80%;
     min-width: 350px;
     max-width: 850px;
-    min-height: 180px;
-    width: 80%;
     background-color: #ffffff;
+    margin: auto;
     margin-bottom: 1em;
     padding: 1em;
     display: flex;
@@ -22,14 +22,13 @@
 
 /* Movie Card CSS */
 .movie > .movie-title-container {
-    width: 100%;
     font-size: 1.5em;
     padding: 0.5em 1em;
 }
 
 .movie > .movie-details {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     padding: 0.5em 1em;
 }
 
@@ -50,11 +49,11 @@
 .movie-details > aside {
     flex: 1 1 auto;
     justify-content: flex-end;
+    overflow: hidden;
 }
 
 .movie-details > aside > ul {
     list-style: none;
-    padding-left: 2em;
 }
 
 .movie-details > aside > ul > li {

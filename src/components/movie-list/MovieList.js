@@ -30,16 +30,18 @@ class MovieList extends React.Component {
         if(this.state.listOfMovies) {
             return (
                 <main>
-                    {this.state.listOfMovies.map((props) => <Movie 
-                        key={props.movie_title + props.title_year} 
-                        {...props}/>)}
+                    <div className='movie-list-container'>
+                        {this.state.listOfMovies.map((props) => <Movie 
+                            key={props.movie_title + props.title_year} 
+                            {...props}/>)}
+                    </div>
                 </main>
             )
         } else {
             // Show a message or a spinner until the response is received
             return (
                 <main>
-                    No Movie Found
+                    <div id="spinner"></div>
                 </main>
             )
         }
