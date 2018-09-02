@@ -12,6 +12,11 @@ function uniq (array) {
     })
 }
 
+/**
+ * 
+ * @param {array, movieName} array 
+ * @returns List of Movies matched with name 
+ */
 function searchByMovieName(array, movieName) {
     return array.filter((movie) => {
         return (movie.movie_title.toLowerCase().trim() === movieName.toLowerCase().trim()) ? movie : false

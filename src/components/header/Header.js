@@ -27,6 +27,16 @@ class Header extends React.Component {
                         />
                     </form>
                 </div>
+                <div className='advanced-options'>
+                    <div className='sort-by-year'>
+                        <div>Sort By Title Year: &nbsp;&nbsp;&nbsp;</div>
+                        <select value={this.props.defaultValue} onChange={this.props.handleSortByYear}>
+                            <option value="None">None</option>
+                            <option value="asc">Ascending</option>
+                            <option value="desc">Descending</option>
+                        </select>
+                    </div>
+                </div>
             </header>
         )
     }
