@@ -1,0 +1,8 @@
+main {
+    flex: 4 4 auto;
+    background-color: #F2F2F2;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    overflow-y: auto;
+}

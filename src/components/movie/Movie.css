@@ -1,0 +1,64 @@
+.movie {
+    min-width: 350px;
+    max-width: 850px;
+    min-height: 180px;
+    width: 80%;
+    background-color: #ffffff;
+    margin-bottom: 1em;
+    padding: 1em;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.movie:first-of-type {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+
+.movie:last-of-type {
+    margin-bottom: 1.5em;
+}
+
+
+/* Movie Card CSS */
+.movie > .movie-title-container {
+    width: 100%;
+    font-size: 1.5em;
+    padding: 0.5em 1em;
+}
+
+.movie > .movie-details {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 0.5em 1em;
+}
+
+.movie-details > div {
+    flex: 2 2 auto;
+}
+
+.movie-details > div > ul{
+    padding: 0.5em 0 0 1.3em;
+}
+
+.movie-details > div > div:first-child {
+    padding: 0.5em 0;
+}
+
+
+
+.movie-details > aside {
+    flex: 1 1 auto;
+    justify-content: flex-end;
+}
+
+.movie-details > aside > ul {
+    list-style: none;
+    padding-left: 2em;
+}
+
+.movie-details > aside > ul > li {
+    list-style: none;
+    padding: 0.5em 0 0 0; 
+}
+

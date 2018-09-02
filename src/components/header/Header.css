@@ -1,0 +1,5 @@
+header {
+    flex: 1 1 15vh;
+    min-height: 15vh;
+    background-color: #383447;
+}
