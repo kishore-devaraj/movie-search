@@ -7,7 +7,11 @@
     margin-bottom: 1em;
     padding: 1em;
     display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
     flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    -webkit-flex-flow: column nowrap
 }
 
 .movie:first-of-type {
@@ -28,7 +32,11 @@
 
 .movie > .movie-details {
     display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
     flex-flow: row wrap;
+    -ms-flex-flow: row nowrap;
+    -webkit-flex-flow: row nowrap;
     padding: 0.5em 1em;
 }
 
@@ -48,7 +56,11 @@
 
 .movie-details > aside {
     flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
     justify-content: flex-end;
+    -ms-justify-content: flex-end;
+    -webkit-justify-content: flex-end;
     overflow: hidden;
 }
 

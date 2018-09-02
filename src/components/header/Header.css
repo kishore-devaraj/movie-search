@@ -1,28 +1,40 @@
 header {
-    flex: 0 0 20vh;
-    min-height: 20vh;
     width: 100%;
-    background-color: #383447;
+    min-height: 20vh;
+    flex: 0 0 20vh;
+    -ms-flex: 0 0 20vh;
+    -webkit-flex:0 0 20vh;
     display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
     flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    -webkit-flex-flow: column nowrap;
+    background-color: #383447;
 }
 
 header > .search-container {
     flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
     margin-top: 15px;
 }
 
 .search-container > form {
     /* width: 50%; */
     display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
     justify-content: center;
 }
 
 .search-container input[type=text] {
-    flex: 0 0 auto;
     width: 80%;
     min-width: 150px;
     max-width: 700px;
+    flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
+    -mx-flex: 0 0 auto;
     font-size: 1em;
     padding: 6px;
     border: none;
@@ -30,20 +42,33 @@ header > .search-container {
 }
 
 header > .advanced-options {
-    flex: 0 0 auto;
     width: 80%;
     height: 70%;
     min-width: 150px;
     max-width: 700px;
+    flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
+    -mx-flex: 0 0 auto;
     display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
     align-self: center;
-    
+    -ms-flex-align-self: center;
+    -webkit-flex-align-self: center;
 }
 
 .advanced-options > .sort-by-year {
     color: white;
     flex: 0 0 250px;
+    -ms-flex: 0 0 250px;
+    -webkit-flex: 0 0 250px;
     display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
     justify-content: center;
+    -webkit-flex-justify-content: center;
+    -ms-flex-justify-content: center;
     align-items: center;
+    -ms-flex-align-items: center;
+    -webkit-flex-align-items: center;
 }
