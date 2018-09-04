@@ -13,6 +13,7 @@ class App extends React.Component {
         super(props)
         this.state = {
             listOfMovies: [],
+            listOfMoviesFromResponse: [],
             sortByYearOrder: 'None'
         }
         this.searchByName = this.searchByName.bind(this)
@@ -26,8 +27,9 @@ class App extends React.Component {
        fetch(url)
        .then(response => response.json())
        .then(json => {
+           let uniqJson = uniq(json)
            // Removing Duplicate elements before storing it to state
-           this.setState({listOfMovies: uniq(json)})
+           this.setState({listOfMovies: uniqJson, listOfMoviesFromResponse: uniqJson})
        })
        .catch(err => console.log(err))
     }
@@ -44,10 +46,7 @@ class App extends React.Component {
             }
         } else {
             // If the search value is empty fetch the movies again
-            if(this.state.listOfMovies.length < 499) {
-                console.log('Get the movies again')
-                this.getAllMovies()
-            }
+            this.setState({listOfMovies: this.state.listOfMoviesFromResponse})
         }
     }
 
@@ -57,7 +56,7 @@ class App extends React.Component {
         if(e.target.value !== 'None') {
             sortByHeap(this.state.listOfMovies, e.target.value)
         } else {
-            this.getAllMovies()
+            this.setState({listOfMovies: this.state.listOfMoviesFromResponse})
         }
     }
 

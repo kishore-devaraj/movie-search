@@ -16,8 +16,7 @@ class Header extends React.Component {
         this.setState({searchedMovieName: e.target.value})
     }
 
-    onSubmitClearInputField(e){
-        e.target.searchInput.value = ''
+    onSubmitClearInputField(e) {
         this.props.searchByName(e, this.state.searchedMovieName)
     }
 
