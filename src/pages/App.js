@@ -3,7 +3,7 @@ import fetch from 'cross-fetch'
 
 import Header from '../components/header/Header'
 import MovieList from '../components/movie-list/MovieList'
-import { uniq, searchByMovieName} from '../utils/general-utils'
+import { uniq, searchByMovieName, filterByLang, filterByCountry} from '../utils/general-utils'
 import { sortByHeap } from '../utils/sort-by-heap'
 import './App.css'
 
@@ -19,6 +19,7 @@ class App extends React.Component {
         this.searchByName = this.searchByName.bind(this)
         this.getAllMovies = this.getAllMovies.bind(this)
         this.handleSortByYear = this.handleSortByYear.bind(this)
+        this.filterChange = this.filterChange.bind(this)
     }
 
     getAllMovies() {
@@ -60,6 +61,20 @@ class App extends React.Component {
         }
     }
 
+    filterChange (filter, value) {
+        let filteredMovies
+        if (filter === 'lang') {
+            filteredMovies = filterByLang(this.state.listOfMovies, value)
+            if (filteredMovies.length !== 0) this.setState({listOfMovies: filteredMovies})
+
+        } else if (filter === 'country') {
+            filteredMovies= filterByCountry(this.state.listOfMovies, value)
+            if (filteredMovies.length !== 0) this.setState({listOfMovies: filteredMovies})
+        } else {
+            this.setState({listOfMovies: this.state.listOfMoviesFromResponse})
+        }
+    }
+
     componentDidMount () {
       this.getAllMovies()
     }
@@ -71,7 +86,8 @@ class App extends React.Component {
                     <Header 
                         searchByName={this.searchByName} 
                         handleSortByYear={this.handleSortByYear}
-                        defaultValue={this.state.sortByYearOrder}/>
+                        defaultValue={this.state.sortByYearOrder}
+                        filterChange={this.filterChange} />
                     <MovieList listOfMovies={this.state.listOfMovies}/>
                 </div>
             )

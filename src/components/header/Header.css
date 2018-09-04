@@ -1,9 +1,9 @@
 header {
     width: 100%;
-    min-height: 20vh;
-    flex: 0 0 20vh;
-    -ms-flex: 0 0 20vh;
-    -webkit-flex:0 0 20vh;
+    min-height: 25vh;
+    flex: 0 0 25vh;
+    -ms-flex: 0 0 25vh;
+    -webkit-flex:0 0 25vh;
     display: flex;
     display: -ms-flex;
     display: -webkit-flex;
@@ -43,7 +43,7 @@ header > .search-container {
 
 header > .advanced-options {
     width: 80%;
-    height: 70%;
+    height: 68%;
     min-width: 150px;
     max-width: 700px;
     flex: 0 0 auto;
@@ -55,20 +55,40 @@ header > .advanced-options {
     align-self: center;
     -ms-flex-align-self: center;
     -webkit-flex-align-self: center;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -mx-flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .advanced-options > .sort-by-year {
     color: white;
-    flex: 0 0 250px;
-    -ms-flex: 0 0 250px;
-    -webkit-flex: 0 0 250px;
+    flex: 0 0 280px;
+    -ms-flex: 0 0 280px;
+    -webkit-flex: 0 0 280px;
     display: flex;
     display: -ms-flex;
     display: -webkit-flex;
-    justify-content: center;
-    -webkit-flex-justify-content: center;
-    -ms-flex-justify-content: center;
     align-items: center;
     -ms-flex-align-items: center;
     -webkit-flex-align-items: center;
+}
+
+.advanced-options > .filter-by {
+    color: white;
+    flex: 0 0 280px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+}
+
+#filterValue {
+    font-size: 0.8em;
+    padding: 6px;
+    border: none;
+    width: 80%;
+}
+
+#searchByForm {
+    display: none;
 }
