@@ -34,9 +34,21 @@ function filterByYear (array, year) {
     })
 }
 
+/**
+ * 
+ * @param {MovieArray} array 
+ * @param {LanguageToBeFiltered} lang 
+ */
+function filterByLang (array, lang) {
+    return array.filter(movie => {
+        return movie.language.toLowerCase() === lang.toLowerCase() ? movie : false
+    })
+}
+
 module.exports = {
     uniq,
     searchByMovieName,
-    filterByYear
+    filterByYear,
+    filterByLang
 }
 

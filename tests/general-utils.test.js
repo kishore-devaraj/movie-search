@@ -1,27 +1,32 @@
-const { uniq, searchByMovieName,filterByYear }  = require('../src/utils/general-utils')
+const { uniq, searchByMovieName, filterByYear, filterByLang }  = require('../src/utils/general-utils')
 const { sortByHeap } = require('../src/utils/sort-by-heap')
 const expect = require('expect')
 
 let movies = [
     { 
         'movie_title': 'Pirates of the caribbean',
-        'title_year': 2010
+        'title_year': 2010,
+        'language': 'English'
     },
     { 
         'movie_title': 'Avatar ',
-        'title_year': 2011
+        'title_year': 2011,
+        'language': 'Spanish'
     },
     { 
         'movie_title': 'Argo',
-        'title_year': 2014
+        'title_year': 2014,
+        'language': 'Hindi'
     },
     { 
         'movie_title': 'Harry Potter',
-        'title_year': 2016
+        'title_year': 2016,
+        'language': 'Arabic'
     },
     { 
         'movie_title': 'Pirates of the caribbean',
-        'title_year': 2010
+        'title_year': 2010,
+        'language': 'English'
     },
 ]
 
@@ -36,7 +41,8 @@ describe('General Utils Test Cases', () => {
         expect(movieByName[0]).toExist()
         expect(movieByName[0]).toInclude({ 
             'movie_title': 'Harry Potter',
-            'title_year': 2016
+            'title_year': 2016,
+            'language': 'Arabic'
         })  
     })
 
@@ -45,7 +51,8 @@ describe('General Utils Test Cases', () => {
         expect(movieByName[0]).toExist()
         expect(movieByName[0]).toInclude({ 
             'movie_title': 'Harry Potter',
-            'title_year': 2016
+            'title_year': 2016,
+            'language': 'Arabic'
         })  
     }) 
     it('should return empty array when no movie present', () => {
@@ -83,7 +90,8 @@ describe('Filter by year', () => {
         expect(filteredMovies).toInclude(
             { 
                 'movie_title': 'Pirates of the caribbean',
-                'title_year': 2010
+                'title_year': 2010,
+                'language': 'English'
             } 
         )
     })
@@ -94,9 +102,33 @@ describe('Filter by year', () => {
         expect(filteredMovies).toInclude(
             { 
                 'movie_title': 'Harry Potter',
-                'title_year': 2016
+                'title_year': 2016,
+                'language': 'Arabic'
             }
         )
     })
+
+    it('should not return movie for unknown year', () => {
+        let filteredMovies = filterByYear(movies, 2999)
+        expect(filteredMovies.length).toBe(0)
+    })
 })
 
+describe('Filter By Langauge Unit Test', () => {
+    it('should return list of movies for selected lang', () => {
+        let filteredMovies = filterByLang(movies, 'English')
+        expect(filteredMovies.length).toBe(2)
+        expect(filteredMovies).toInclude(
+            { 
+                'movie_title': 'Pirates of the caribbean',
+                'title_year': 2010,
+                'language': 'English'
+            }
+        )
+    })
+
+    it('should not return movies for unknown language', () => {
+        let filteredMovies = filterByLang(movies, 'Chinese')
+        expect(filteredMovies.length).toBe(0)  
+    })
+})
