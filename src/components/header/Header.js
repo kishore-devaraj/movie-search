@@ -9,18 +9,24 @@ class Header extends React.Component {
             searchedMovieName: ''
         }
         this.searchOnChange = this.searchOnChange.bind(this)
+        this.onSubmitClearInputField = this.onSubmitClearInputField.bind(this)
     }
 
     searchOnChange (e) {
         this.setState({searchedMovieName: e.target.value})
     }
 
+    onSubmitClearInputField(e){
+        e.target.searchInput.value = ''
+        this.props.searchByName(e, this.state.searchedMovieName)
+    }
+
     render() {
         return (
             <header>
                 <div className='search-container'>
-                    <form onSubmit={(e) => this.props.searchByName(e, this.state.searchedMovieName)}>
-                        <input type="text" placeholder="Search for Movies..." 
+                    <form onSubmit={this.onSubmitClearInputField}>
+                        <input type="text" id="searchInput" placeholder="Search for Movies..." 
                         name="search" 
                         autoComplete="off"
                         onChange={this.searchOnChange}
