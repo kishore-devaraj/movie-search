@@ -1,4 +1,4 @@
-const { uniq, searchByMovieName }  = require('../src/utils/general-utils')
+const { uniq, searchByMovieName,filterByYear }  = require('../src/utils/general-utils')
 const { sortByHeap } = require('../src/utils/sort-by-heap')
 const expect = require('expect')
 
@@ -75,4 +75,28 @@ describe('Sorting By Title Year Tests', () => {
 
     
 })
-  
+
+describe('Filter by year', () => {
+    it('should return movies by title year', () => {
+        let filteredMovies = filterByYear(movies, 2010)
+        expect(filteredMovies.length).toBe(2)
+        expect(filteredMovies).toInclude(
+            { 
+                'movie_title': 'Pirates of the caribbean',
+                'title_year': 2010
+            } 
+        )
+    })
+
+    it('should return one movie for 2009', () => {
+        let filteredMovies = filterByYear(movies, 2016)
+        expect(filteredMovies.length).toBe(1)
+        expect(filteredMovies).toInclude(
+            { 
+                'movie_title': 'Harry Potter',
+                'title_year': 2016
+            }
+        )
+    })
+})
+

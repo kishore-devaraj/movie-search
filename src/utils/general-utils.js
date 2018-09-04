@@ -23,9 +23,20 @@ function searchByMovieName(array, movieName) {
     })
 }
 
-module.exports = {
-    uniq,
-    searchByMovieName
+/**
+ * 
+ * @param {MovieArray} array 
+ * @param {YearToBeFiltered} year 
+ */
+function filterByYear (array, year) {
+    return array.filter(movie => {
+        return movie.title_year === year ? movie : false
+    })
 }
 
+module.exports = {
+    uniq,
+    searchByMovieName,
+    filterByYear
+}
 
