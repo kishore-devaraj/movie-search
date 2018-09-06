@@ -1,7 +1,7 @@
 {
   "name": "movie-search",
   "version": "0.1.0",
-  "homepage": "https://github.com/kishore-devaraj/movie-search",
+  "homepage": "https://kishore-devaraj.github.io/movie-search",
   "private": true,
   "dependencies": {
     "cross-fetch": "^2.2.2",
