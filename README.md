@@ -1,0 +1,26 @@
+# movie-search
+A minimalist application that shows the list of movies fetched from the external api and lists it down to the end users.
+The main goal of this project is demostrate how **Sorting Algorithm** can be implemented in list of objects (Movies).
+
+## Implementation of Sorting Algorithm
+
+* Sorting list of 10 Movies could be easily done by naive methods, but sorting something huge list say (500 - 1000) takes lot
+of time and it affects the performance too. If we sort the big list using *selection sort, bubble sort* or even *insertion sort*
+it takes O(n*2) time to process. 
+
+* Let say 1s is need for 1 iteration. If we implement the above mentioned sorting algorithms for this problem, it would (500 * 500)
+seconds to complete the process. Hugh! This is not what we wanted. Then what else option we have?
+
+* Lets move to better sorting algorithm such as *quicksort, mergesort and heapsort*. All three have the same time complexity.
+But time complexity is not the only place we should look
+at when implementing sorting algorithm. There are other factors such space complexity, stablity etc.
+
+* When we take space complexity, **Mergesort** is **out-of-place algorithm**, means it allocates a separates memory for sorting.
+So mergesort is out of our choices. What we do have now? QuickSort.
+
+* **Quicksort** is ideally a good choice, with time complexity **O(nlog(n))** which is better than O(n^2). Also it's **in-place
+algorithm** which less memory needed. But at worst scenario, time complexity will be still O(n^2). We can put this under hold.
+Moving on...
+
+* The one that is left is **Heapsort** with a time complexity of **O(nlog(n))** at all conditions and an **in-place algorithm**.
+Tadaa we got the one what we needed. Heapsort, the saviour and that is one we have implemented for this project.
